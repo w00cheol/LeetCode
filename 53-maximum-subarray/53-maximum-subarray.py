@@ -1,5 +1,15 @@
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
+        start = nums[0]
+        answer = nums[0]
+        for i in range(1, len(nums)):
+            start = max(start+nums[i], nums[i])
+            answer = max(answer, start)
+        return answer 
+    
+'''
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
         return self.__div_conquer(nums, 0, len(nums)-1)
     
     def __div_conquer(self, nums, left, right):
@@ -19,3 +29,4 @@ class Solution:
         div_right = self.__div_conquer(nums, mid+1, right)
         
         return max(div_left, div_right, now)
+'''
