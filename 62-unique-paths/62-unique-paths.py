@@ -7,5 +7,4 @@ class Solution:
             y = i % m
             if x and y:
                 grid[x][y] = grid[x-1][y] + grid[x][y-1]
-        
         return grid[-1][-1]
