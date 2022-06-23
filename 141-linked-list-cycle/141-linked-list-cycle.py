@@ -1,9 +1,9 @@
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        step1 = step2 = head
-        while step1 and step2 and step2.next:
-            step1 = step1.next
-            step2 = step2.next.next
-            if step1 == step2:
+        while head:
+            if head.val is None:
                 return True
+            else:
+                head.val = None
+                head = head.next
         return False
