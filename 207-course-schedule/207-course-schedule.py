@@ -16,7 +16,6 @@ class Solution:
         for i in range(len(prerequisites)):
             dic[prerequisites[i][0]].append(prerequisites[i][1])
         for i in range(numCourses):
-            visited = []
-            if self.dfs(i, dic, visited) == False:
+            if self.dfs(i, dic, []) == False:
                 return False
         return True
