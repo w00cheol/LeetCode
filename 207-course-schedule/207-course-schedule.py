@@ -14,7 +14,7 @@ class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         dic = defaultdict(list)
         for i in range(len(prerequisites)):
-            dic[prerequisites[i][0]].append(prerequisites[i][1])
+            dic[prerequisites[i][1]].append(prerequisites[i][0])
         for i in range(numCourses):
             if self.dfs(i, dic, []) == False:
                 return False
