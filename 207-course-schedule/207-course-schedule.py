@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 class Solution:
     def dfs(self, i, dic, visited):
         if i in visited:
@@ -10,9 +12,7 @@ class Solution:
         return True
                 
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
-        dic = {}
-        for i in range(numCourses):
-            dic[i] = []
+        dic = defaultdict(list)
         for i in range(len(prerequisites)):
             dic[prerequisites[i][0]].append(prerequisites[i][1])
         for i in range(numCourses):
