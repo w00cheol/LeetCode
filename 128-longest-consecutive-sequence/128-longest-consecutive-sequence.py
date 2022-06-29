@@ -16,5 +16,5 @@ class Solution:
                     dic[right_index] = False
                     right_index += 1
                     cnt += 1
-                answer = max(cnt, answer)
+                answer = max(answer, cnt)
         return answer
