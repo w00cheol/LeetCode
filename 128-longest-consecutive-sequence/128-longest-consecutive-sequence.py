@@ -7,12 +7,12 @@ class Solution:
         for i in range(len(keys)): # O(n)
             if dic[keys[i]] == True:
                 cnt = 1
-                left_index, right_index = keys[i] - 1, keys[i] + 1
-                while dic.get(left_index, 0) and dic[left_index] == True:
+                left_index, right_index = keys[i]-1, keys[i]+1
+                while dic.get(left_index, False):
                     dic[left_index] = False
                     left_index -= 1
                     cnt += 1
-                while dic.get(right_index, 0) and dic[right_index] == True:
+                while dic.get(right_index, False):
                     dic[right_index] = False
                     right_index += 1
                     cnt += 1
