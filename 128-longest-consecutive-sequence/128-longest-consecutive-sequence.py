@@ -5,16 +5,16 @@ class Solution:
             dic[nums[i]] = True
         keys = list(dic.keys()) # O(n)
         for i in range(len(keys)): # O(n)
-            if dic[keys[i]] == True:
+            if keys[i] in dic: # O(1)
                 cnt = 1
                 left_index, right_index = keys[i]-1, keys[i]+1
-                while dic.get(left_index, False):
+                while left_index in dic: # O(1)
                     cnt += 1
-                    dic[left_index] = False
+                    del dic[left_index]
                     left_index -= 1
-                while dic.get(right_index, False):
+                while right_index in dic: # O(1)
                     cnt += 1
-                    dic[right_index] = False
+                    del dic[right_index]
                     right_index += 1
                 answer = max(answer, cnt)
         return answer
