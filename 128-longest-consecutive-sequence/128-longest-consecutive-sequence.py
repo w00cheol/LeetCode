@@ -3,7 +3,7 @@ class Solution:
         answer, dic = 0, {}
         for i in range(len(nums)): # O(n)
             dic[nums[i]] = True
-        keys = list(dic.keys())
+        keys = list(dic.keys()) # O(n)
         for i in range(len(keys)): # O(n)
             if dic[keys[i]] == True:
                 cnt = 1
