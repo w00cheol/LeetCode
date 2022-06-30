@@ -1,6 +1,5 @@
 class Solution:
     heights, dxy = [], [[-1, 0], [1, 0], [0, -1], [0, 1]]
-    
     def dfs(self, i, j, visited):
         if (i, j) in visited:
             return
