@@ -10,7 +10,7 @@ class Solution:
                 if self.heights[i][j] <= self.heights[moved_i][moved_j]:
                     self.dfs(moved_i, moved_j, visited) # until maximum heights from start point
                     
-    def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
+    def pacificAtlantic(self, heights):
         self.heights = heights
         row, col = len(heights), len(heights[0])
         p_area, a_area = set(), set()
