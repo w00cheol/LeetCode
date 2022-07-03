@@ -4,12 +4,12 @@ class Solution:
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
-        prev, curr = None, slow
-        while curr:
-            temp = curr.next
-            curr.next = prev
-            prev = curr
-            curr = temp
+        prev = None
+        while slow:
+            temp = slow.next
+            slow.next = prev
+            prev = slow
+            slow = temp
         left, right = head, prev
         while right and right.next:
             copy_left = left.next
