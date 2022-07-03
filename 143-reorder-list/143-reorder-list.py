@@ -1,10 +1,9 @@
 class Solution:
     def reorderList(self, head: Optional[ListNode]) -> None:
-        slow = fast = head
+        prev, slow, fast = None, head, head
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
-        prev = None
         while slow:
             temp = slow.next
             slow.next = prev
