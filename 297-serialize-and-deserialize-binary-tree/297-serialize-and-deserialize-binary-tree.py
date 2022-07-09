@@ -1,6 +1,6 @@
 class Codec:
     def dfs(self, data):
-        if data[0] == 'N':
+        if data[0] == 'X':
             return data[2:], None
         index = data.find('#')
         root = TreeNode(int(data[:index]))
@@ -11,7 +11,7 @@ class Codec:
     
     def serialize(self, root, answer_str = ''):
         if not root:
-            answer_str += 'N' + '#'
+            answer_str += 'X' + '#'
         else:
             answer_str += str(root.val) + '#'
             answer_str = self.serialize(root.left, answer_str)
