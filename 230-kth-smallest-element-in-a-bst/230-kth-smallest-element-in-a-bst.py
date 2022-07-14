@@ -1,6 +1,6 @@
 class Solution:
     def dfs(self, root, answer):
-        if not root: return
+        if root == None: return
         answer.append(root.val)
         self.dfs(root.left, answer)
         self.dfs(root.right, answer)
