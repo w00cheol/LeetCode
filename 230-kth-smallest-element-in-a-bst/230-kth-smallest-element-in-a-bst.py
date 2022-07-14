@@ -5,7 +5,7 @@ class Solution:
         self.dfs(root.left, answer)
         self.dfs(root.right, answer)
         
-    def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
+    def kthSmallest(self, root: Optional[TreeNode], k: int):
         answer = []
         self.dfs(root, answer)
         return sorted(answer)[k-1]
