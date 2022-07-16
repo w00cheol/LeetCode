@@ -2,6 +2,7 @@ class Trie:
     answer = []
     def __init__(self):
         self.answer = set()
+        
     def insert(self, word: str) -> None:
         self.answer.add(word)
     def search(self, word: str) -> bool:
