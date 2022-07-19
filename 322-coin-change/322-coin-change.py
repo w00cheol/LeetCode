@@ -1,5 +1,5 @@
 class Solution:
-    def coinChange(self, coins: List[int], amount: int) -> int:
+    def coinChange(self, coins, amount):
         answer = [0] + [2e9 for _ in range(amount)]
         for i in range(1, amount + 1):
             for coin in coins:
