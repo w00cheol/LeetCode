@@ -1,5 +1,5 @@
 class Solution:
-    def setZeroes(self, matrix: List[List[int]]) -> None:
+    def setZeroes(self, matrix):
         dic = {'row': False, 'col': False}
         for i in range(len(matrix)):
             for j in range(len(matrix[0])):
