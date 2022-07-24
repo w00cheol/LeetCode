@@ -1,4 +1,4 @@
 class Solution:
-    def rotate(self, matrix: List[List[int]]) -> None:
+    def rotate(self, matrix):
         matrix[:] = zip(*matrix[::-1])
         
