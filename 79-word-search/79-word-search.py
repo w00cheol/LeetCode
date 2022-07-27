@@ -6,14 +6,10 @@ class Solution:
                     return True
                 value = board[i][j]
                 board[i][j] = None
-                if i+1 < len(board):
-                    if find(board, i+1, j, word[1:]): return True
-                if j+1 < len(board[0]):
-                    if find(board, i, j+1, word[1:]): return True
-                if i-1 >= 0:
-                    if find(board, i-1, j, word[1:]): return True
-                if j-1 >= 0:
-                    if find(board, i, j-1, word[1:]): return True
+                if i+1 < len(board) and find(board, i+1, j, word[1:]): return True
+                if j+1 < len(board[0]) and find(board, i, j+1, word[1:]): return True
+                if i-1 >= 0 and find(board, i-1, j, word[1:]): return True
+                if j-1 >= 0 and find(board, i, j-1, word[1:]): return True
                 board[i][j] = value
             return False
         
