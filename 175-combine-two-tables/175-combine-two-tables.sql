@@ -7,5 +7,5 @@ FROM
     Person as p
 LEFT JOIN
     Address as a
-    ON
-        p.personId = a.personId
+ON
+    p.personId = a.personId
