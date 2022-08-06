@@ -3,7 +3,8 @@ SELECT
 FROM
     Employee as E
 WHERE
-    E.salary > (SELECT
+    E.salary > (
+                SELECT
                     M.salary
                 FROM
                     Employee as M
