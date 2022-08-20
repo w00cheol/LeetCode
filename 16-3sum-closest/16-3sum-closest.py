@@ -9,7 +9,7 @@ class Solution:
                 temp = nums[left] + nums[mid] + nums[right]
                 if temp == target:
                     return temp
-                if abs(temp - target) < abs(answer - target):
+                elif abs(temp - target) < abs(answer - target):
                     answer = temp
                 if temp < target:
                     mid += 1
