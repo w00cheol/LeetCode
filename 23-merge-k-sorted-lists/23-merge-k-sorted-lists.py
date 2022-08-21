@@ -1,9 +1,10 @@
 class Solution:
-    def mergeKLists(self, lists: List[Optional[ListNode]]):
-        k = len(lists)
-        dic = {}
+    def mergeKLists(self, lists):
         head = ListNode(2e9)
         answer = head
+        
+        k = len(lists)
+        dic = {}
         cnt = 0
         
         for i in range(k):
@@ -19,8 +20,8 @@ class Solution:
         
         while cnt > 0:
             target = min(dic.items(), key=lambda x: x[1])
-                        
             answer.val = target[1]
+            
             answer.next = ListNode(2e9) if cnt > 1 else None
             answer = answer.next
             
