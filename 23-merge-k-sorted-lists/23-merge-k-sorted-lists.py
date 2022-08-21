@@ -20,7 +20,6 @@ class Solution:
         while cnt > 0:
             target = min(dic.items(), key=lambda x: x[1])
                         
-                
             answer.val = target[1]
             answer.next = ListNode(2e9) if cnt > 1 else None
             answer = answer.next
