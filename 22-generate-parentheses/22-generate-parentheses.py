@@ -1,6 +1,5 @@
 class Solution:
     def generateParenthesis(self, n):
-        
         def dfs(string, popen, pclose, answer):
             if pclose == 0:
                 answer.append(string)
