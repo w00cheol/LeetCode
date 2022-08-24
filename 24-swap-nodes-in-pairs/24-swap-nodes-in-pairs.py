@@ -1,5 +1,5 @@
 class Solution:
-    def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    def swapPairs(self, head: Optional[ListNode]):
         answer = head
         cnt = 0
         
