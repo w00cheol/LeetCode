@@ -1,5 +1,5 @@
 class Solution:
-    def isValidSudoku(self, board: List[List[str]]) -> bool:
+    def isValidSudoku(self, board: List[List[str]]):
         rows = [set() for _ in range(9)]
         cols = [set() for _ in range(9)]
         boxes = [set() for _ in range(9)]
@@ -24,4 +24,5 @@ class Solution:
                     boxes[b].add(board[i][j])
                 else:
                     return False
+                
         return True
