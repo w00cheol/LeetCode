@@ -1,5 +1,5 @@
 class Solution:
-    def lengthOfLastWord(self, s: str):
+    def lengthOfLastWord(self, s):
         answer = 0
         index = len(s) - 1
         
