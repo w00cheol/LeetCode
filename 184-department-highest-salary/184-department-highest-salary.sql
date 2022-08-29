@@ -4,18 +4,19 @@ SELECT
     E.salary as Salary
 FROM
     Employee E
-LEFT JOIN
+INNER JOIN
     (
         SELECT
-            id, rank() OVER (PARTITION BY departmentId ORDER BY salary DESC) as ranking
+            departmentId, max(salary) as maxSalary
         FROM
             Employee
+        GROUP BY
+            departmentId
     ) R
 ON
-    R.id = E.id
+    R.departmentId = E.departmentId AND
+    R.maxSalary = E.salary
 LEFT JOIN
     Department D
 ON
     D.id = E.departmentId
-WHERE
-    R.ranking = 1
