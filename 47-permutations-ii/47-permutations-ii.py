@@ -1,14 +1,13 @@
 class Solution:
     def permuteUnique(self, nums):
-        answer = set()
-        
-        def dfs(nums, permutationList = []):
+        def dfs(nums, answer, permutationList = []):
             if not nums:
                 answer.add(tuple(permutationList))
                 return
             
             for i in range(len(nums)):
-                dfs(nums[:i] + nums[i+1:], permutationList + [nums[i]])
-                
-        dfs(nums)
+                dfs(nums[:i] + nums[i+1:], answer, permutationList + [nums[i]])
+            
+        answer = set()
+        dfs(nums, answer)
         return answer
