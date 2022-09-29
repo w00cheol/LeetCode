@@ -1,13 +1,9 @@
 class Solution:
     def subsets(self, nums: List[int]):
-        answer = []
+        answer = [[]]
         
-        def dfs(nums):
-            if nums in answer:
-                return
-            answer.append(nums)
-            for i in range(len(nums)):
-                dfs(nums[:i] + nums[i+1:])
-        
-        dfs(nums)
+        for num in nums:
+            for i in range(len(answer)):
+                answer.append(answer[i] + [num])
+                
         return answer
