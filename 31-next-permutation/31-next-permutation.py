@@ -1,5 +1,5 @@
 class Solution:
-    def nextPermutation(self, nums: List[int]) -> None:
+    def nextPermutation(self, nums: List[int]):
         i = len(nums)-1
         
         while i > 0 and nums[i-1] >= nums[i]:
@@ -15,6 +15,6 @@ class Solution:
                 min_bigger = k
                        
         nums[i-1], nums[min_bigger] = nums[min_bigger], nums[i-1]
-        
         nums[::] = nums[:i] + nums[i:][::-1]
+        
         return
