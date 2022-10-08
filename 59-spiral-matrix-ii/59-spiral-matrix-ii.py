@@ -1,6 +1,6 @@
 class Solution:
-    def generateMatrix(self, n: int) -> List[List[int]]:
-        answer = [[0] * n for _ in range(n)]
+    def generateMatrix(self, n: int):
+        answer = [[None] * n for _ in range(n)]
         x, y = 0, 0
         dx, dy = 1, 0
         
