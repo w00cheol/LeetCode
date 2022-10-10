@@ -1,5 +1,5 @@
 class Solution:
-    def jump(self, nums: List[int]) -> int:
+    def jump(self, nums: List[int]):
         answer = checkpoint = next_checkpoint = 0
         
         for i in range(len(nums)):
