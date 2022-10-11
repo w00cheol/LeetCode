@@ -1,5 +1,5 @@
 class Solution:
-    def searchRange(self, nums, target: int):
+    def searchRange(self, nums, target):
         def findLeft(nums, target):
             l, r = 0, len(nums) - 1
 
