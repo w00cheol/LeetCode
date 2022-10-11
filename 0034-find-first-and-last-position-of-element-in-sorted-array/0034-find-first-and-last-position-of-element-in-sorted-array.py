@@ -26,7 +26,6 @@ class Solution:
                 
             return r
         
-        left = findLeft(nums, target)
-        right = findRight(nums, target)
+        left, right = findLeft(nums, target), findRight(nums, target)
         
         return [left, right] if left <= right else [-1, -1]
