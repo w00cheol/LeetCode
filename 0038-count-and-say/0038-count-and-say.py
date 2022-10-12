@@ -1,5 +1,5 @@
 class Solution:
-    def countAndSay(self, n: int) -> str:
+    def countAndSay(self, n: int):
         answer = ['1']
         
         def countDigit(n):
