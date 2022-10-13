@@ -1,5 +1,5 @@
 class Solution:
-    def rotateRight(self, head: Optional[ListNode], k: int):
+    def rotateRight(self, head, k: int):
         if head is None or head.next is None:
             return head
         new_head = head
