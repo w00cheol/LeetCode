@@ -2,22 +2,21 @@ class Solution:
     def rotateRight(self, head, k: int):
         if head is None or head.next is None:
             return head
-        new_head = head
-        runner = head
+        
+        new_head, runner = head, head
         
         node_nums = 1
         for _ in range(k):
-            if runner.next is None:
+            if runner.next:
+                runner = runner.next
+                node_nums += 1
+            else:
                 runner = head
                 
                 for _ in range(k % node_nums):
                     runner = runner.next
                     
                 break
-            else:
-                runner = runner.next
-                node_nums += 1
-            
             
         while runner.next is not None:
             runner = runner.next
