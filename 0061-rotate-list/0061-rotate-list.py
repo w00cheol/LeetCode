@@ -1,6 +1,6 @@
 class Solution:
-    def rotateRight(self, head, k: int):
-        if head is None or head.next is None:
+    def rotateRight(self, head, k):
+        if not head or not head.next:
             return head
         
         new_head, runner = head, head
@@ -18,7 +18,7 @@ class Solution:
                     
                 break
             
-        while runner.next is not None:
+        while runner.next:
             runner = runner.next
             new_head = new_head.next
         
