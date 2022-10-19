@@ -1,5 +1,5 @@
 class Solution:
-    def restoreIpAddresses(self, s: str) -> List[str]:
+    def restoreIpAddresses(self, s):
         answer = []
         
         def dfs(dot, fixed_s, remain_s):
