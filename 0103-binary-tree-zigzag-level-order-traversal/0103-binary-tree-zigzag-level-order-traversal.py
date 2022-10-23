@@ -1,9 +1,8 @@
 class Solution:
-    def zigzagLevelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+    def zigzagLevelOrder(self, root):
         
         def divide_conquer(root, depth):
-            if root is None:
-                return {}
+            if root is None: return {}
             
             small_answer = {}
             small_answer[depth] = [root.val]
