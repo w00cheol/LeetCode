@@ -26,5 +26,4 @@ class Solution:
             
             return small_answer
         
-        answer = divide_conquer(root, 1)
-        return answer.values()
+        return divide_conquer(root, 1).values()
