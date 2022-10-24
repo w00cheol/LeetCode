@@ -3,7 +3,7 @@ class Solution:
         board = [['.' for _ in range(n)] for _ in range(n)]
         answer = []
         
-        def backTracking(board, row):
+        def backTracking(row):
             if isValid(board) == False:
                 return
             if row == n:
@@ -12,7 +12,7 @@ class Solution:
             
             for i in range(len(board[0])):
                 board[row][i] = 'Q'
-                backTracking(board, row + 1)
+                backTracking(row + 1)
                 board[row][i] = '.'
             
             return
@@ -33,7 +33,7 @@ class Solution:
                             r_upper_diag.add(r+c)
             return True
         
-        backTracking(board, 0)
+        backTracking(0)
         return answer
         
         
