@@ -1,5 +1,5 @@
 class Solution:
-    def solveNQueens(self, n: int) -> List[List[str]]:
+    def solveNQueens(self, n: int):
         board = [['.' for _ in range(n)] for _ in range(n)]
         answer = []
         
