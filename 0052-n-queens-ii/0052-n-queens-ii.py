@@ -5,10 +5,11 @@ class Solution:
         neg_diag = set()
         
         def backTracking(row):
-            count = 0
             if row == n:
                 return 1
-                
+            
+            count = 0
+            
             for col in range(n):
                 if col in cols or (row + col) in pos_diag or (row - col) in neg_diag:
                     continue
