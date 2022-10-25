@@ -1,5 +1,5 @@
 class Solution:
-    def totalNQueens(self, n: int) -> int:
+    def totalNQueens(self, n):
         cols = set()
         pos_diag = set()
         neg_diag = set()
