@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define MAX_SIZE 10
+#define MAX_SIZE 100
 
 typedef struct NodeType{
     int idx;
@@ -29,7 +29,6 @@ void heappush(Heap* heap, int idx, int value){
         i = parent;
         parent = (i-1) / 2;
     }
-    return;
 }
 
 int heappop_idx(Heap* heap){
@@ -64,7 +63,6 @@ int heappop_idx(Heap* heap){
         // 왼쪽 자식 바로 직전 인덱스로 초기화
         i = child * 2;
     }
-
     return min;
 }
 
