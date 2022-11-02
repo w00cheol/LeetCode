@@ -4,8 +4,6 @@ int main()
 {
     Heap hp = {0};
 
-    // heapprint(hp);
-
     heappush(&hp, 8, 31);
     heappush(&hp, 4, 8);
     heappush(&hp, 7, 30);
@@ -17,17 +15,14 @@ int main()
 
     heapprint(hp);
 
-    // for(int i = 0 ; i< 8; i++){
-    //     printf("idx popped : %d\n", heappop_idx(&hp));
-    // }
+    printf("idx popped : %d\n", heappop_idx(&hp));
+    printf("idx popped : %d\n", heappop_idx(&hp));
+    printf("idx popped : %d\n", heappop_idx(&hp));
+    printf("idx popped : %d\n", heappop_idx(&hp));
     printf("idx popped : %d\n", heappop_idx(&hp));
     printf("idx popped : %d\n", heappop_idx(&hp));
     printf("idx popped : %d\n", heappop_idx(&hp));
     printf("idx popped : %d\n", heappop_idx(&hp));
 
-    printf("idx popped : %d\n", heappop_idx(&hp));
-    printf("idx popped : %d\n", heappop_idx(&hp));
-    printf("idx popped : %d\n", heappop_idx(&hp));
-    printf("idx popped : %d\n", heappop_idx(&hp));
     heapprint(hp);
 }
