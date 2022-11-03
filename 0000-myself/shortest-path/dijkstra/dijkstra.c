@@ -2,7 +2,6 @@
 #include <string.h>
 
 #define VERTEX_SIZE 10
-#define VERTEX_NAME_SIZE 10
 #define INF 100000
 
 enum BOOL {FALSE, TRUE};
@@ -137,8 +136,9 @@ int main()
     }
     
     // 서울 선정 (서울 코드: SU -> 6)
-    // int target = SU;
+    int target = SU;
 
+    // 일반 배열 다익스트라 알고리즘 수행
     printf("<<일반 배열을 사용한 다익스트라 알고리즘 수행>>\n");
     for(int i = 0; i < VERTEX_SIZE; i++){
         dijkstra(v, i);
@@ -150,12 +150,43 @@ int main()
         init_vertex(&v[i], i, init_weights[i]);
     }
 
-    // 모든 지역에 대해 다익스트라 알고리즘 수행
+    // 우선순위 큐 다익스트라 알고리즘 수행
     printf("<<우선순위 큐를 사용한 다익스트라 알고리즘 수행>>\n");
     for(int i = 0; i < VERTEX_SIZE; i++){
         dijkstra_with_heap(v, i);
         print_weight(v[i], vertexes);
     }
+
+    // 배열리스트를 사용하지 않은 다익스트라 알고리즘 수행
+    printf("<<배열리스트를 사용하지 않은 다익스트라 알고리즘 수행>>\n");
+    enum BOOL visit[10] = {FALSE, };
+    for(int i = 0; i < VERTEX_SIZE; i++){
+        int min = INF;
+        int min_idx = -1;
+        // 최소 가중치 구하기
+        for(int j = 0; j < VERTEX_SIZE; j++){
+            if(visit[j] == FALSE){
+                if(min > init_weights[target][j]){
+                    min_idx = j;
+                    min = init_weights[target][j];
+                }
+            }
+        }
+        
+        // 방문
+        visit[min_idx] = TRUE;
+        for(int k = 0; k < VERTEX_SIZE; k++){
+            if(init_weights[target][k] > init_weights[target][min_idx] + init_weights[min_idx][k]){
+                init_weights[target][k] = init_weights[target][min_idx] + init_weights[min_idx][k];
+            }
+        }
+    }
+    // 거리 출력
+    printf("%s -> ", vertexes[target]);
+    for(int i = 0; i < VERTEX_SIZE; i++){
+        printf("%s: %d ", vertexes[i], init_weights[target][i]);
+    }
+    printf("\n");
 
     return 0;
 }
