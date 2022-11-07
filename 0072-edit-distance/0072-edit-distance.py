@@ -1,5 +1,5 @@
 class Solution:
-    def minDistance(self, word1, word2) -> int:
+    def minDistance(self, word1, word2):
         answer = [[0 for _ in range(len(word2) + 1)] for _ in range(len(word1) + 1)]
 
         for i in range(len(word1) + 1):
