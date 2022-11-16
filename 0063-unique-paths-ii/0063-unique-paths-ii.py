@@ -1,5 +1,5 @@
 class Solution:
-    def uniquePathsWithObstacles(self, obstacleGrid) -> int:
+    def uniquePathsWithObstacles(self, obstacleGrid):
         if obstacleGrid[0][0] or obstacleGrid[-1][-1]:
             return 0
         
