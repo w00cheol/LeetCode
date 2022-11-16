@@ -1,8 +1,7 @@
 class Solution:
-    def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
+    def uniquePathsWithObstacles(self, obstacleGrid) -> int:
         if obstacleGrid[0][0] or obstacleGrid[-1][-1]:
             return 0
-        
         
         for row in range(len(obstacleGrid)):
             for col in range(len(obstacleGrid[0])):
