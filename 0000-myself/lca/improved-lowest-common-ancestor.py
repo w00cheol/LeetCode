@@ -40,12 +40,21 @@ def climb(node, diff):
     return node
 
 def lca(node_1, node_2):
+    i, j = min(node_1, node_2), max(node_1, node_2)
+    if (i, j) in results:
+        return results[(i, j)]
+
     if depths[node_1] > depths[node_2]:
         node_1 = climb(node_1, depths[node_1] - depths[node_2])
     elif depths[node_1] < depths[node_2]:
         node_2 = climb(node_2, depths[node_2] - depths[node_1])
 
+    k, l = node_1, node_2
+    if (k, l) in results:
+        return results[(k, l)]
+
     if node_1 == node_2:
+        results[(i, j)] = node_1
         return node_1
     else:
         answer = 1
@@ -68,6 +77,8 @@ def lca(node_1, node_2):
                 
             mid = (lo + hi) // 2
 
+        results[(i, j)] = answer
+        results[(k, l)] = answer
         return answer
 
 edge_num = int(sys.stdin.readline().rstrip())
@@ -75,6 +86,7 @@ edge_num = int(sys.stdin.readline().rstrip())
 edges = [[] for _ in range(edge_num + 1)]
 parents = [[None for _ in range(int(sqrt(edge_num)))] for i in range(edge_num + 1)]
 depths = [-1] + [0 for _ in range(edge_num)]
+results = {}
 
 for _ in range(edge_num - 1):
     node_1, node_2 = map(int, input().split())
