@@ -1,29 +1,30 @@
 import sys
 input = sys.stdin.readline
+sys.setrecursionlimit(10**6)
 
 def lca(curr=1):
     visit.add(curr)
     found_cnt = 0
 
     if curr == node_1 or curr == node_2:
-        found_cnt += 1
+        found_cnt -= 1
 
     for child in edges[curr]:
         if child not in visit:
             child_lca = lca(child)
                 
-            if child_lca[0] == 2: # child has already found LCA! return it
+            if child_lca > 0: # child has already found LCA! return it
                 return child_lca
 
-            if child_lca[0] == 1: # one of its children has one node
-                found_cnt += 1 # so found_cnt ++
+            if child_lca == -1: # one of its children has one node
+                found_cnt -= 1 # so -(found_cnt ++)
 
-                if found_cnt == 2:
+                if found_cnt == -2:
                     # we found (1 child + curr) or (2 children)
                     # ,which means current node is LCA
-                    return [2, curr]
+                    return curr
 
-    return [found_cnt, curr]
+    return found_cnt
     
 
 edge_num = int(sys.stdin.readline().rstrip())
@@ -39,7 +40,7 @@ for _ in range(question_len):
     node_1, node_2 = map(int, input().split())
 
     if node_1 == node_2:
-        print(node_2)
+        print(node_1)
     else:
         visit = set()
-        print(lca()[-1])
+        print(lca())
