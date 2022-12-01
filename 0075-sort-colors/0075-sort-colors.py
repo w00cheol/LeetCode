@@ -1,5 +1,5 @@
 class Solution:
-    def sortColors(self, nums: List[int]) -> None:
+    def sortColors(self, nums) -> None:
         dic = {0: 0, 1:0, 2:0}
         
         for num in nums:
