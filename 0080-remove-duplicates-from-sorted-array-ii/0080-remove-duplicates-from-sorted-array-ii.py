@@ -1,5 +1,5 @@
 class Solution:
-    def removeDuplicates(self, nums) -> int:
+    def removeDuplicates(self, nums):
         runner = 2
         
         for i in range(2, len(nums)):
