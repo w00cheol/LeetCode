@@ -1,18 +1,21 @@
 class Solution:
-    def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
-        fake = ListNode(0, head)
-        runner = fake
+    def reverseBetween(self, head, left: int, right: int):
+        fake_head = ListNode(0, head)
+        curr = fake_head
         
         for _ in range(left - 1):
-            runner = runner.next
+            curr = curr.next
             
-        last_head = runner
-        runner = runner.next
+        last_head = curr # idx : left - 1
         
-        tail = runner
-        prev = runner
-        curr = runner.next
+        curr = curr.next # idx += 1
+        last_body = curr # idx : left
         
+        # prev, curr = left, left + 1
+        prev = curr
+        curr = curr.next
+        
+        # reverse and slide window
         for _ in range(right - left):
             next_node = curr.next
             curr.next = prev
@@ -20,6 +23,6 @@ class Solution:
             curr = next_node
             
         last_head.next = prev 
-        tail.next = curr
+        last_body.next = curr
             
-        return fake.next
+        return fake_head.next
