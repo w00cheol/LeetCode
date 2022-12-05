@@ -1,5 +1,5 @@
 class Solution:
-    def reverseBetween(self, head, left: int, right: int):
+    def reverseBetween(self, head, left, right):
         fake_head = ListNode(0, head)
         curr = fake_head
         
