@@ -1,6 +1,8 @@
 class Solution:
     def reverseBetween(self, head, left, right):
-        fake_head = ListNode(0, head)
+        fake_head = ListNode(0)
+        fake_head.next = head
+        
         curr = fake_head
         
         for _ in range(left - 1):
