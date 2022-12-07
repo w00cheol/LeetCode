@@ -1,4 +1,2 @@
 ### LCS(Longest Common Subsequence)
-
-###### 
-[REFERENCE](https://www.acmicpc.net/problem/9251)
+### LCS(Longest Common Substring)
