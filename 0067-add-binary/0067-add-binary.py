@@ -3,7 +3,6 @@ class Solution:
         i, j = len(a) - 1, len(b) - 1
         answer = ''
         cin = 0
-        bitmask = 0
         
         while i >= 0 and j >= 0:
             sum = int(a[i]) + int(b[j]) + cin
@@ -41,6 +40,7 @@ class Solution:
             j -= 1
             answer += str(sum)
             
-        answer += str(cin)
+        if cin:
+            answer += str(cin)
         
-        return answer[::-1] if cin else answer[-2::-1]
+        return answer[::-1]
