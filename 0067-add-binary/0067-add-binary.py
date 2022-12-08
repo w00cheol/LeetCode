@@ -25,7 +25,6 @@ class Solution:
             j -= 1
             answer += str(sum)
             
-        if cin:
-            answer += str(cin)
+        if cin: answer += str(cin)
         
         return answer[::-1]
