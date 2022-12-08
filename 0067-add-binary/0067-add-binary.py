@@ -1,8 +1,8 @@
 class Solution:
-    def addBinary(self, a: str, b: str) -> str:
+    def addBinary(self, a, b):
         i, j = len(a) - 1, len(b) - 1
-        answer = ''
         cin = 0
+        answer = ''
         
         while i >= 0 and j >= 0:
             sum = int(a[i]) + int(b[j]) + cin
