@@ -1,5 +1,5 @@
 class Solution:
-    def reverseBits(self, n: int) -> int:
+    def reverseBits(self, n) -> int:
         answer = n & 1
         
         for _ in range(31):
