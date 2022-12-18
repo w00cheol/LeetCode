@@ -1,5 +1,5 @@
 class Solution:
-    def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
+    def subsetsWithDup(self, nums):
         def dfs(idx, curr):
             answers.append(curr)
             
