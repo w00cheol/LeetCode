@@ -9,6 +9,6 @@ class Solution:
                     
         answers = []
         nums.sort()
-        dfs(0, [])
         
+        dfs(0, [])
         return answers
