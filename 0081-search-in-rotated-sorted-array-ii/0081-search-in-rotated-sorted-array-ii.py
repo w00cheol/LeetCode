@@ -9,11 +9,8 @@ class Solution:
                 return True
 
             elif nums[l] == nums[mid]:
-                if l != mid:
-                    l += 1
-                    continue
-                else:
-                    l = mid + 1
+                l += 1
+                continue
 
             elif nums[l] < nums[mid]:
                 if nums[l] <= target < nums[mid]:
