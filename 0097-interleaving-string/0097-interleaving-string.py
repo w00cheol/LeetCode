@@ -33,7 +33,4 @@ class Solution:
                 
                 dp[r][c] =  use_s1 or use_s2
                 
-        for d in dp:
-            print(d)
-        
         return dp[-1][-1]
