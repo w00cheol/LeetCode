@@ -1,5 +1,5 @@
 class Solution:
-    def isInterleave(self, s1: str, s2: str, s3: str):
+    def isInterleave(self, s1, s2, s3):
         # Time complexity: O(n*m)
         # Space complexity: O(n*m)
         
