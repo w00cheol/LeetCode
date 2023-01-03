@@ -1,9 +1,12 @@
 class Solution:
-    def hIndex(self, citations: List[int]):
+    def hIndex(self, citations):
+        answer = 0
         citations.sort(reverse = True)
         
-        for i in range(len(citations)):
-            if (i + 1) > citations[i]:
-                return i
+        for citation in citations:
+            answer += 1
+            
+            if answer > citation:
+                return answer - 1
         
-        return len(citations)
+        return answer
