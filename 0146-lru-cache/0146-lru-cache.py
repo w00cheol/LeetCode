@@ -6,7 +6,7 @@ class NodeList:
         self.next = None
 
 class LRUCache:
-    def __init__(self, capacity: int):
+    def __init__(self, capacity):
         self.dic = {}
         self.length = 0
         self.capacity = capacity
@@ -15,7 +15,7 @@ class LRUCache:
         self.dummy_head.next = self.dummy_tail
         self.dummy_tail.prev = self.dummy_head
 
-    def get(self, key: int) -> int:
+    def get(self, key):
         if key not in self.dic:
             return -1
         
