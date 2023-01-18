@@ -42,8 +42,6 @@ class LRUCache:
             self.remove(self.dummy_head.next)
             self.add(node)
             
-        self.dic[key] = node
-            
     def add(self, node):
         curr_tail = self.dummy_tail.prev
         curr_tail.next = node
@@ -51,7 +49,8 @@ class LRUCache:
         
         node.next = self.dummy_tail
         self.dummy_tail.prev = node
-        
+            
+        self.dic[node.key] = node
         self.length += 1
             
     def remove(self, node):
