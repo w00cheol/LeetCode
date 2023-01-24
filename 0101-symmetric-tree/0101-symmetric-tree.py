@@ -9,7 +9,5 @@ class Solution:
             
             if node_l.val == node_r.val:
                 return dfs(node_l.right, node_r.left) and dfs(node_l.left, node_r.right)
-            else:
-                return False
             
         return dfs(root.left, root.right)
