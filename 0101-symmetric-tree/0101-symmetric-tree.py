@@ -1,5 +1,5 @@
 class Solution:
-    def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+    def isSymmetric(self, root):
         def dfs(node_l, node_r):
             if node_l is None and node_r is None:
                 return True
