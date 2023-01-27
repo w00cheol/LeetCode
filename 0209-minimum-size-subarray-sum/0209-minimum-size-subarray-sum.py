@@ -1,5 +1,5 @@
 class Solution:
-    def minSubArrayLen(self, target: int, nums: List[int]) -> int:
+    def minSubArrayLen(self, target, nums):
         answer = 2e9
         l, r, running_sum = 0, 0, 0
         
