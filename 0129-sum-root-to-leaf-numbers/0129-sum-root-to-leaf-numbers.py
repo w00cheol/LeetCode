@@ -1,5 +1,5 @@
 class Solution:
-    def sumNumbers(self, root: Optional[TreeNode]) -> int:
+    def sumNumbers(self, root):
         global answer
         answer = 0
         
