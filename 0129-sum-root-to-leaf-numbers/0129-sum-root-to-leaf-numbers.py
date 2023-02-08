@@ -13,9 +13,9 @@ class Solution:
             
             if node.left:
                 dfs(running_sum * 10, node.left)
+                
             if node.right:
                 dfs(running_sum * 10, node.right)
                 
-        dfs(0, root)        
-                
+        dfs(0, root)
         return answer
