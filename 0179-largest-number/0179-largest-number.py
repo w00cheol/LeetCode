@@ -1,5 +1,5 @@
 class Solution:
-    def largestNumber(self, nums: List[int]) -> str:
+    def largestNumber(self, nums):
         def compare(x, y):
             return int(nums[x] + nums[y]) >= int(nums[y] + nums[x])
                 
@@ -10,4 +10,4 @@ class Solution:
                 if compare(x, y) == False:
                     nums[x], nums[y] = nums[y], nums[x]
                     
-        return "0" if nums[0] == '0' else ''.join(nums)
+        return ''.join(nums) if nums[0] != '0' else "0"
